@@ -1,0 +1,146 @@
+<!-- <mat-form-field appearance="fill">
+    <mat-label>Select Search Type</mat-label>
+    <mat-select>
+      <mat-option value="one">Customer Search</mat-option>
+      <mat-option value="two">Policy Search</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <br/>
+<mat-form-field appearance="fill">
+    <mat-label>Input</mat-label>
+    <input matInput>
+  </mat-form-field>
+  <br/>
+  <button mat-button class="color-indigo text-color-white" (click) = "SearchPolicy()">Submit</button>
+   -->
+
+   <!-- <div>
+    <form [formGroup] = "searchForm" (ngSubmit) = "SearchPolicy(searchForm.value)" >
+       <input formControlName = "customerNumber" type = "text" class = "fortextbox" name = "customerNumber" placeholder = "emailid" 
+         >
+       <br/>
+       
+       <input formControlName = "policyNumber" type = "password" class = "fortextbox" name="policyNumber" 
+          placeholder = "passwd" >
+       <br/>
+       
+       <input type = "submit" class = "forsubmit" value = "Log In">
+    </form>
+ </div> -->
+ 
+ 
+
+
+
+<h1>Please enter the details</h1>
+ <form [formGroup] = "searchForm" (ngSubmit) = "SearchPolicy(searchForm.value)">
+  <div class="form-group">
+    <h2 for="">Select search type </h2>
+      <mat-radio-group aria-label="Select an option" formControlName = "searchType">
+        <mat-radio-button value="Policy">Policy Number</mat-radio-button>
+        <mat-radio-button value="Customer">Customer Number</mat-radio-button>
+      </mat-radio-group>
+
+      
+    <!-- <input formControlName = "incomeGroup" type="text" class="form-control" id="" placeholder="Enter Customer Number"> -->
+</div>
+<br>
+    <div class="form-group">
+      <label for="custNumberInput">Enter Number</label>
+      <input formControlName = "number" type="text" class="form-control" id="custNumberInput" placeholder="Enter Policy/Customer Number">
+    </div>
+    <br>
+    <button mat-button type="submit" class="color-indigo text-color-white">Submit</button>
+  </form>
+
+  <mat-spinner *ngIf="showSpinner"></mat-spinner>
+
+
+
+  <table *ngIf="showTable" mat-table [dataSource]="DataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="policy_Id">
+      <th mat-header-cell *matHeaderCellDef> Policy_Id. </th>
+      <td mat-cell *matCellDef="let element"> {{element.policy_Id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="dateOfPurchase">
+      <th mat-header-cell *matHeaderCellDef> DateOfPurchase </th>
+      <td mat-cell *matCellDef="let element"> {{element.dateOfPurchase}} </td>
+    </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="customer_Id">
+      <th mat-header-cell *matHeaderCellDef> Customer_Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.customer_Id}} </td>
+    </ng-container>
+  
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="fuel">
+      <th mat-header-cell *matHeaderCellDef> Fuel </th>
+      <td mat-cell *matCellDef="let element"> {{element.fuel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vehicleSegment">
+        <th mat-header-cell *matHeaderCellDef> VehicleSegment </th>
+        <td mat-cell *matCellDef="let element"> {{element.vehicleSegment}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="premium">
+        <th mat-header-cell *matHeaderCellDef> Premium </th>
+        <td mat-cell *matCellDef="let element"> {{element.premium}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="injuryLiability">
+        <th mat-header-cell *matHeaderCellDef> InjuryLiability </th>
+        <td mat-cell *matCellDef="let element"> {{element.injuryLiability}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="personal">
+        <th mat-header-cell *matHeaderCellDef> Personal </th>
+        <td mat-cell *matCellDef="let element"> {{element.personal}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="property">
+        <th mat-header-cell *matHeaderCellDef> Property </th>
+        <td mat-cell *matCellDef="let element"> {{element.property}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="collision">
+        <th mat-header-cell *matHeaderCellDef> Collision </th>
+        <td mat-cell *matCellDef="let element"> {{element.collision}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="comprehensive">
+        <th mat-header-cell *matHeaderCellDef> Comprehensive </th>
+        <td mat-cell *matCellDef="let element"> {{element.comprehensive}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="incomeGroup">
+        <th mat-header-cell *matHeaderCellDef> IncomeGroup </th>
+        <td mat-cell *matCellDef="let element"> {{element.incomeGroup}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="customerRegion">
+        <th mat-header-cell *matHeaderCellDef> CustomerRegion </th>
+        <td mat-cell *matCellDef="let element"> {{element.customerRegion}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="maritalStatus">
+        <th mat-header-cell *matHeaderCellDef> MaritalStatus </th>
+        <td mat-cell *matCellDef="let element"> {{element.maritalStatus}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

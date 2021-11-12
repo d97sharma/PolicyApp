@@ -1,0 +1,42 @@
+mat-grid-tile{
+    font:bold;
+}
+a{
+    color:black
+}
+#SearchPolicy{
+    background-color :lightblue;
+    &:hover{
+        background-color: rgb(103, 103, 206);
+    }
+}
+#SearchPolicy :hover{
+    background-color :lightblue;
+}
+
+#AddPolicy{
+    background-color : rgb(141, 230, 141);
+    &:hover{
+        background-color: rgb(10, 148, 10);
+    }
+}
+
+#UpdatePolicy {
+    background-color :rgb(173, 132, 140);
+    &:hover{
+        background-color: rgb(219, 105, 124);
+    }
+}
+
+#DeletePolicy {
+    background-color :rgb(180, 74, 74);
+    &:hover{
+        background-color: red;
+    }
+}
+#DataVisualizer {
+        background-color :rgb(240, 240, 124);
+        &:hover{
+            background-color: yellow;
+        }
+    }

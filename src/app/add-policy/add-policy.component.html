@@ -1,0 +1,158 @@
+
+<h1>Enter details of the policy to be added</h1>
+
+
+<form [formGroup] = "addForm" (ngSubmit) = "AddPolicy(addForm.value)">
+    <!-- <div class="form-group">
+      <label for="policyNumberInput">Policy Number</label>
+      <input formControlName = "policyNumber" type="text" class="form-control" id="policyNumberInput" placeholder="Enter policy number">
+    </div> -->
+
+
+    
+    <div class="form-group">
+        <label for="">Customer_Id </label>
+        <input formControlName = "customer_Id" type="text" class="form-control" id="" placeholder="Enter Customer Number">
+    </div>
+
+    
+
+    <div class="form-group">
+        <label for="">Vehicle Segment </label>
+        <input formControlName = "vehicleSegment" type="text" class="form-control" id="" placeholder="Enter A/B/C">
+    </div>
+
+    <br/>
+    <div class="form-group">
+        <label for="">Premium </label><br/>
+        <input formControlName = "premium" type="text" class="form-control" id="" placeholder="Enter value in $">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+
+    <div class="form-group">
+        <label for="">Date of Purchase </label>
+        <input matInput [matDatepicker]="picker" formControlName = "dateOfPurchase" type="text"  id="" placeholder="Enter Date of Purchase">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </div>
+    <br/>
+
+    <div class="form-group">
+        <label for="">InjuryLiability </label><br/>
+        <label>True </label>
+        <input formControlName = "injuryLiability" type="radio" name="injuryLiability"  [value]="true">
+        <label>False </label>
+        <input formControlName = "injuryLiability" type="radio" name="injuryLiability"  [value]="false">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+
+    
+    <div class="form-group">
+        <label for="">Personal </label><br/>
+        <label>True </label>
+        <input formControlName = "personal" type="radio" name="personal"  [value]="true">
+        <label>False </label>
+        <input formControlName = "personal" type="radio" name="personal"  [value]="false">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="">Property </label><br/>
+        <label>True </label>
+        <input formControlName = "property" type="radio" name="property"  [value]="true">
+        <label>False </label>
+        <input formControlName = "property" type="radio" name="property"  [value]="false">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="">Collision </label><br/>
+        <label>True </label>
+        <input formControlName = "collision" type="radio" name="collision"  [value]="true">
+        <label>False </label>
+        <input formControlName = "collision" type="radio" name="collision"  [value]="false">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+    <div class="form-group">
+        <label for="">Comprehensive </label><br/>
+        <label>True </label>
+        <input formControlName = "comprehensive" type="radio" name="comprehensive"  [value]="true">
+        <label>False </label>
+        <input formControlName = "comprehensive" type="radio" name="comprehensive"  [value]="false">
+        <!-- <input formControlName = "Premium" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    <br/>
+    <div class="form-group">
+        <!-- <label for="">Gender </label> -->
+        <mat-form-field appearance="fill">
+            <mat-label>Gender</mat-label>
+            <select matNativeControl required formControlName = "gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </mat-form-field>
+    </div>
+
+    <div class="form-group">
+        <!-- <label for="">IncomeGroup </label> -->
+        <mat-form-field appearance="fill">
+            <mat-label>IncomeGroup</mat-label>
+            <select matNativeControl required formControlName = "incomeGroup">
+              <option value="0-$25k">0-$25k</option>
+              <option value="$25-$70K">$25-$70K</option>
+              <option value=">$70K">>$70K</option>
+            </select>
+          </mat-form-field>
+        <!-- <input formControlName = "incomeGroup" type="text" class="form-control" id="" placeholder="Enter Customer Number"> -->
+    </div>
+
+    <div class="form-group">
+        <!-- <label for="">Fuel </label> -->
+        <mat-form-field appearance="fill">
+            <mat-label>Fuel</mat-label>
+            <select matNativeControl required formControlName = "fuel">
+              <option value="CNG">CNG</option>
+              <option value="Diesel">Diesel</option>
+              <option value="Petrol">Petrol</option>
+            </select>
+          </mat-form-field>
+        <!-- <input formControlName = "fuel" type="text" class="form-control" id="" placeholder="Enter true/false"> -->
+    </div>
+    
+    <div class="form-group">
+        <!-- <label for="">CustomerRegion </label> -->
+        <mat-form-field appearance="fill">
+            <mat-label>CustomerRegion</mat-label>
+            <select matNativeControl required formControlName = "customerRegion">
+              <option value="North">North</option>
+              <option value="East">East</option>
+              <option value="West">West</option>
+              <option value="South">South</option>
+            </select>
+          </mat-form-field>
+        <!-- <input formControlName = "customerRegion" type="text" class="form-control" id="" placeholder="Enter Customer Number"> -->
+    </div>
+
+    <div class="form-group">
+      <!-- <label for="custNumberInput">MaritalStatus</label> -->
+      <mat-form-field appearance="fill">
+        <mat-label>MaritalStatus</mat-label>
+        <select matNativeControl required formControlName = "maritalStatus">
+          <option value="0">Married</option>
+          <option value="1">Unmarried</option>
+        </select>
+      </mat-form-field>
+      <!-- <input formControlName = "maritalStatus" type="text" class="form-control" id="custNumberInput" placeholder="Enter Customer Number"> -->
+    </div>
+    <br>
+    <button mat-button type="submit" class="color-indigo text-color-white">Submit</button>
+  </form>
+
+
+
+<!--mat-->
+
+

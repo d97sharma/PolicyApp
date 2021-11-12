@@ -1,0 +1,32 @@
+<form [formGroup] = "chartForm" (ngSubmit) = "ChartData(chartForm.value)">
+    <div class="form-group">
+      <h2 for="">Select region </h2>
+        <mat-radio-group aria-label="Select an option" formControlName = "region">
+          <mat-radio-button value="East">East</mat-radio-button><br>
+          <mat-radio-button value="West">West</mat-radio-button><br>
+          <mat-radio-button value="North">North</mat-radio-button><br>
+          <mat-radio-button value="South">South</mat-radio-button><br>
+        </mat-radio-group>
+  
+        
+      <!-- <input formControlName = "incomeGroup" type="text" class="form-control" id="" placeholder="Enter Customer Number"> -->
+  </div>
+  <br>
+      <button mat-button type="submit" class="color-indigo text-color-white">Search</button>
+    </form>
+  
+<mat-spinner *ngIf="showSpinner"></mat-spinner>
+
+<ngx-charts-bar-vertical  *ngIf="showChart"
+    [view]="[1000,400]"
+    [results]="barChartData"
+    [xAxisLabel]="'Gender'"
+    [legendTitle]="'Gender - Policy data'"
+    [yAxisLabel]="'Policies'"
+    [legend]="true"
+    [showXAxisLabel]="true"
+    [showYAxisLabel]="true"
+    [xAxis]="true"
+    [yAxis]="true"
+    [gradient]="true">
+</ngx-charts-bar-vertical>

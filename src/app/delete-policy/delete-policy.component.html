@@ -1,0 +1,11 @@
+<h1>Please enter Policy ID of the policy to be deleted</h1>
+ <form [formGroup] = "deleteForm" (ngSubmit) = "DeletePolicy(deleteForm.value)">
+    <div class="form-group">
+      <label for="policyNumberInput">Policy Number</label>
+      <input formControlName = "policyNumber" type="text" class="form-control" id="policyNumberInput" placeholder="Enter policy number">
+    </div>
+    <br>
+    <button mat-button type="submit" class="color-indigo text-color-white">Submit</button>
+  </form>
+
+  
